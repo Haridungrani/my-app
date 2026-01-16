@@ -21,6 +21,7 @@ export default function Signup() {
     const res = await fetch('http://127.0.0.1:8000/signup', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
+      credentials: "include",
       body: JSON.stringify({name, email, password})
     });
     if(res.ok){
@@ -34,8 +35,6 @@ export default function Signup() {
     alert("Server error");
   }
 };
-
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-400">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
@@ -46,8 +45,9 @@ export default function Signup() {
             <input
               type="text"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 text-gray-800"
+              autoComplete="name"
               required
             />
           </div>
@@ -56,8 +56,9 @@ export default function Signup() {
             <input
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 text-gray-800"
+              autoComplete="email"
               required
             />
           </div>
@@ -66,8 +67,9 @@ export default function Signup() {
             <input
               type="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 text-gray-800"
+              autoComplete="new-password"
               required
             />
           </div>
@@ -76,8 +78,9 @@ export default function Signup() {
             <input
               type="password"
               value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setConfirmPassword(e.target.value)}
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 text-gray-800"
+              autoComplete="new-password"
               required
             />
           </div>

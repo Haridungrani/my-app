@@ -55,6 +55,7 @@ export default function Profile() {
   });
   if(res.ok){
     alert("Profile saved successfully");
+    router.push('/');
   } else {
     alert("Error updating profile");
   }

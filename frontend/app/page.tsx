@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState('');
+  const router = useRouter();
 
   useEffect(() => {
     const loggedIn = localStorage.getItem('loggedIn') === 'true';
@@ -12,6 +14,14 @@ export default function Home() {
     setIsLoggedIn(loggedIn);
     setUserEmail(email);
   }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('loggedIn');
+    localStorage.removeItem('userEmail');
+    localStorage.removeItem('token');
+    setIsLoggedIn(false);
+    router.push('/login');
+  };
 
   return (
     <div className="p-8 bg-gray-100 min-h-screen">
@@ -25,6 +35,14 @@ export default function Home() {
             : 'Empowering students with comprehensive educational resources. Access interactive courses, submit assignments on time, review grades, and build your academic profile for a successful future in learning and career development.'
           }
         </p>
+        {isLoggedIn && (
+          <button
+            onClick={handleLogout}
+            className="bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded-lg transition duration-300"
+          >
+            Logout
+          </button>
+        )}
       </div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <div className="bg-white p-6 rounded-lg shadow-md">

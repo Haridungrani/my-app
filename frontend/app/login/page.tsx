@@ -21,6 +21,8 @@ export default function Login() {
     if(res.ok){
       localStorage.setItem('token', data.access_token);
       localStorage.setItem('userEmail', email);
+      localStorage.setItem('loggedIn', 'true');
+      alert('Login successful!');
       router.push('/profile');
     } else {
       alert(data.detail || "Login failed");
@@ -42,8 +44,9 @@ export default function Login() {
             <input
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               className="w-full text-gray-800 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500"
+              autoComplete="email"
               required
             />
           </div>
@@ -52,8 +55,9 @@ export default function Login() {
             <input
               type="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 text-gray-800"
+              autoComplete="current-password"
               required
             />
           </div>

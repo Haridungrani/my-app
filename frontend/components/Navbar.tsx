@@ -33,7 +33,7 @@ export default function Navbar({ onLoginClick, onSignupClick, onProfileClick }: 
     <nav className="bg-gray-600 text-white p-2 shadow-md h-16 flex items-center">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center">
-          <Image src="/logo.png" alt="Logo" width={80} height={80} className="rounded-full" />
+          <Image loading="lazy" src="/logo.png" alt="Logo" width={80} height={80} className="rounded-full" />
         </Link>
         <div className="space-x-4">
           <Link href="/" className="hover:underline">
