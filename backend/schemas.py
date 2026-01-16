@@ -16,6 +16,6 @@ class UserProfile(BaseModel):
     dob: str = None
     mobile: str = None
     gender: str = None
-    student_id: str = None
+    student_id: int = None
     class_level: str = None
     address: str = None

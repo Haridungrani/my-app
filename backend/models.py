@@ -33,6 +33,6 @@ class User(Base):
     dob = Column(String, nullable=True)
     mobile = Column(String, nullable=True)
     gender = Column(String, nullable=True)
-    student_id = Column(String, nullable=True)
-    class_level = Column(Integer, nullable=True)
+    student_id = Column(Integer, nullable=True)
+    class_level = Column(String, nullable=True)
     address = Column(String, nullable=True)

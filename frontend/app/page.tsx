@@ -48,28 +48,40 @@ export default function Home() {
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-xl text-gray-800 font-bold mb-2">Courses</h2>
           <p className="text-gray-600">Discover a wide range of subjects and enroll in courses tailored to your interests and academic goals.</p>
-          <button className="mt-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded">
+          <button 
+            onClick={() => router.push('/courses')}
+            className="mt-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded"
+          >
             View Courses
           </button>
         </div>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-xl text-gray-800 font-bold mb-2">Assignments</h2>
           <p className="text-gray-600">Stay organized with upcoming assignments, submission deadlines, and progress tracking.</p>
-          <button className="mt-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded">
+          <button 
+            onClick={() => router.push('/assignments')}
+            className="mt-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded"
+          >
             View Assignments
           </button>
         </div>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-xl text-gray-800 font-bold mb-2">Grades</h2>
           <p className="text-gray-600">Monitor your grades, understand your strengths, and identify areas for improvement.</p>
-          <button className="mt-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded">
+          <button 
+            onClick={() => router.push('/grades')}
+            className="mt-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded"
+          >
             View Grades
           </button>
         </div>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <h2 className="text-xl text-gray-800 font-bold mb-2">Resources</h2>
           <p className="text-gray-600">Access study materials, tutorials, and additional resources to enhance your learning experience.</p>
-          <button className="mt-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded">
+          <button 
+            onClick={() => router.push('/resources')}
+            className="mt-4 bg-gray-600 hover:bg-gray-700 text-white py-2 px-4 rounded"
+          >
             View Resources
           </button>
         </div>

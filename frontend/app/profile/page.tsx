@@ -47,7 +47,17 @@ export default function Profile() {
 
   const handleSave = async () => {
   const token = localStorage.getItem('token');
-  const payload = { first_name: firstName, last_name: lastName, email, dob, mobile, gender, student_Id, class_level, address };
+  const payload = { 
+    first_name: firstName, 
+    last_name: lastName, 
+    email, 
+    dob, 
+    mobile, 
+    gender, 
+    student_id: student_Id ? parseInt(student_Id) : null, 
+    class_level,
+    address 
+  };
   const res = await fetch('http://127.0.0.1:8000/profile', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
