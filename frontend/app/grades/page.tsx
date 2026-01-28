@@ -87,7 +87,7 @@ export default function Grades() {
                     </span>
                   </td>
                   <td className="py-3 px-4">
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white py-1 px-4 rounded text-sm">
+                    <button className="bg-gray-600 hover:bg-gray-700 text-white py-1 px-4 rounded text-sm">
                       View Details
                     </button>
                   </td>

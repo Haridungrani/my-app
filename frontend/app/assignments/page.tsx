@@ -65,7 +65,7 @@ export default function Assignments() {
                   </td>
                   <td className="py-3 px-4 text-gray-600">{assignment.points}</td>
                   <td className="py-3 px-4">
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white py-1 px-4 rounded text-sm">
+                    <button className="bg-gray-600 hover:bg-gray-700 text-white py-1 px-4 rounded text-sm">
                       {assignment.status === 'Submitted' ? 'View' : 'Submit'}
                     </button>
                   </td>

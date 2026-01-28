@@ -37,7 +37,7 @@ export default function Courses() {
               <p className="text-gray-600 mb-4">{course.description}</p>
               <div className="flex justify-between items-center">
                 <span className="text-sm text-gray-500">{course.enrolled} students enrolled</span>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white py-1 px-4 rounded text-sm">
+                <button className="bg-gray-600 hover:bg-gray-700 text-white py-1 px-4 rounded text-sm">
                   View Details
                 </button>
               </div>
