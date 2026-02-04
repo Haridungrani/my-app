@@ -20,7 +20,7 @@ export default function Profile() {
     const token = localStorage.getItem('token');
     if(!token) return router.push('/login');
     try {
-      const res = await fetch('http://127.0.0.1:8000/profile', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/profile`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if(res.ok){
@@ -58,7 +58,7 @@ export default function Profile() {
     class_level,
     address 
   };
-  const res = await fetch('http://127.0.0.1:8000/profile', {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/profile`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
     body: JSON.stringify(payload)
